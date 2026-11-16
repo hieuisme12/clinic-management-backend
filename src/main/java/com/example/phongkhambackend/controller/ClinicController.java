@@ -106,9 +106,7 @@ public class ClinicController {
         }
     }
 
-    // ==========================================
-    // 3. QUẢN LÝ THUỐC (MEDICINES)
-    // ==========================================
+    // 3. Medicines
     @GetMapping("/medicines")
     @PreAuthorize("hasAnyRole('USER', 'DOCTOR', 'ADMIN')")
     public ResponseEntity<ApiResponse<List<Medicine>>> getMedicines(@RequestParam(required = false) String search) {
@@ -133,9 +131,7 @@ public class ClinicController {
                 Arrays.asList(MedicineUnit.values())));
     }
 
-    // ==========================================
-    // 4. HỒ SƠ KHÁM BỆNH & LỊCH SỬ (MEDICAL RECORDS)
-    // ==========================================
+    // 4. Medical records
     @GetMapping("/patients/{patientId}/medical-records")
     @PreAuthorize("hasAnyRole('USER', 'DOCTOR', 'ADMIN')")
     public ResponseEntity<ApiResponse<List<MedicalRecord>>> getMedicalRecordsByPatient(@PathVariable Long patientId) {

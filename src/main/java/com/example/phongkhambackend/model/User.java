@@ -26,5 +26,5 @@ public class User {
     private String role; // 'ADMIN', 'USER' hoặc 'DOCTOR'
 
     private String phone;
-    private String specialty; // Chuyên khoa (dành cho bác sĩ)
+    private String specialty; // Chuyên khoa
 }
